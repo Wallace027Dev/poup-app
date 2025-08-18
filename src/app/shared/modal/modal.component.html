@@ -1,6 +1,14 @@
 <dialog #modal class="dialog">
   <button class="close-modal" (click)="closeModal()">
-    <img src="icones/fechar.svg" alt="">
+    <img src="icones/fechar.svg" alt="" />
   </button>
-  olá
+  <div class="content">
+    <div class="header">
+      <ng-content select="[modal-header]"> Título padrão </ng-content>
+    </div>
+
+    <div>
+      <ng-content> Conteúdo padrão </ng-content>
+    </div>
+  </div>
 </dialog>
