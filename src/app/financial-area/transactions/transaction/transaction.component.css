@@ -3,7 +3,7 @@
   justify-content: space-between;
 }
 
-.name-e-valor {
+.name-and-value {
   width: 70%;
 
   display: flex;
@@ -15,7 +15,7 @@
   font-weight: 700;
 }
 
-.data-e-account {
+.date-e-account {
   width: 30%;
 
   display: flex;

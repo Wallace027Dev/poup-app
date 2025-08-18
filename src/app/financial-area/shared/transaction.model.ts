@@ -6,8 +6,8 @@ export class Transacao {
   constructor(
     public readonly name: string,
     public readonly tipo: TipoTransacao,
-    public readonly valor: number,
-    public readonly data: Date,
+    public readonly value: number,
+    public readonly date: Date,
     public readonly account: string
   ) {}
 }

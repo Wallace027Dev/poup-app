@@ -4,7 +4,11 @@
   </div>
 
   <div class="corpo-card">
-    <span class="valor text-xxxl">
+    <span
+      class="value text-xxxl"
+      [appHighlightNumericValue]="balance()"
+      positiveColor="var(--violet-highlight)"
+    >
       {{ balance() | currency:"BRL" }}
     </span>
   </div>

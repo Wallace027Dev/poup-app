@@ -1,11 +1,11 @@
 <div class="transaction">
-  <div class="name-e-valor">
+  <div class="name-and-value" [appHighlightNumericValue]="value()">
     <span class="name text-md">{{ transaction().name || transaction().tipo }}</span>
-    <span class="text-md">{{ valor() | currency:"BRL" }}</span>
+    <span class="text-md">{{ value() | currency:"BRL" }}</span>
   </div>
 
-  <div class="data-e-account">
-    <span class="text-md">{{ transaction().data | date:"shortDate" }}</span>
+  <div class="date-e-account">
+    <span class="text-md">{{ transaction().date | date:"shortDate" }}</span>
     <span class="text-md">{{ transaction().account }}</span>
   </div>
 </div>
