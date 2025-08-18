@@ -2,13 +2,13 @@ import { Component, input } from '@angular/core';
 import { Transacao } from '../shared/transaction.model';
 import { TransacaoComponent } from './transaction/transaction.component';
 import { ButtonComponent } from '../../shared/button/button.component';
-
+import { CardComponent } from '../shared/card/card.component';
 
 @Component({
   selector: 'app-transactions',
-  imports: [TransacaoComponent, ButtonComponent],
+  imports: [TransacaoComponent, ButtonComponent, CardComponent],
   templateUrl: './transactions.component.html',
-  styleUrl: './transactions.component.css'
+  styleUrl: './transactions.component.css',
 })
 export class TransactionsComponent {
   transactions = input.required<Transacao[]>();

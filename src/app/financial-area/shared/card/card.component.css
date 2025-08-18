@@ -12,16 +12,14 @@
   padding: 2rem 1rem 1.5rem;
 }
 
-.accounts-and-button {
+.wrapper-title {
+  border-radius: 1.5rem 1.5rem 0rem 0rem;
+  background: var(--component-header);
+  padding: 1rem;
+  font-weight: 700;
+  text-align: center;
   display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-.botao-adicionar-account {
-  margin: 0 auto;
-}
-
-.icone-carteira {
-  width: 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
