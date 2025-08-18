@@ -1,0 +1,26 @@
+<section class="accounts-card">
+  <div class="titulo-wrapper">
+    <h2 class="text-lg">Minhas accounts</h2>
+  </div>
+
+  <div class="corpo-card">
+    <div class="accounts-e-botao">
+      <ul>
+        @for (account of accounts(); track account.name) {
+          <li class="item-between-partitions">
+            <app-account [account]="account" />
+          </li>
+        } @empty {
+          <li aria-hidden="true">
+            Ainda não há accounts criadas.
+          </li>
+        }
+      </ul>
+
+      <app-button class="botao-adicionar-account">
+        <img src="icones/carteira.svg" alt="" class="icone-carteira">
+        Adicionar account
+      </app-button>
+    </div>
+  </div>
+</section>

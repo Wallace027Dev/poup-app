@@ -1,0 +1,30 @@
+.financial-area {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas:
+    "balance      balance"
+    "transactions accounts";
+  grid-template-columns: 1fr 1fr;
+}
+
+.balance {
+  grid-area: balance;
+}
+
+.transactions {
+  grid-area: transactions;
+}
+
+.accounts {
+  grid-area: accounts;
+}
+
+@media screen and (max-width: 50rem) {
+  .financial-area {
+    grid-template-areas:
+      "balance"
+      "transactions"
+      "accounts";
+    grid-template-columns: 1fr;
+  }
+}

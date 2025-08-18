@@ -1,0 +1,34 @@
+.text-xxxl {
+  font-size: 2.4375rem;
+  line-height: 125%;
+}
+
+.text-xxl {
+  font-size: 1.9375rem;
+  line-height: 125%;
+}
+
+.text-xl {
+  font-size: 1.5625rem;
+  line-height: 125%;
+}
+
+.text-lg {
+  font-size: 1.25rem;
+  line-height: 125%;
+}
+
+.text-md {
+  font-size: 1rem;
+  line-height: 120%;
+}
+
+.text-sm {
+  font-size: 0.8125rem;
+  line-height: 120%;
+}
+
+.text-xs {
+  font-size: 0.625rem;
+  line-height: 120%;
+}

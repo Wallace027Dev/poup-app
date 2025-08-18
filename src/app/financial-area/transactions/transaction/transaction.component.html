@@ -1,0 +1,11 @@
+<div class="transaction">
+  <div class="name-e-valor">
+    <span class="name text-md">{{ transaction().name || transaction().tipo }}</span>
+    <span class="text-md">{{ valor() | currency:"BRL" }}</span>
+  </div>
+
+  <div class="data-e-account">
+    <span class="text-md">{{ transaction().data | date:"shortDate" }}</span>
+    <span class="text-md">{{ transaction().account }}</span>
+  </div>
+</div>

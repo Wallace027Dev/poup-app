@@ -1,0 +1,11 @@
+<div class="account">
+  <div class="banco">
+    <img src="icones/banco.svg" alt="" class="icone-banco">
+    <span class="banco-name text-md">{{ account().name }}</span>
+  </div>
+
+  <div class="balance">
+    <span class="balance-texto text-md">Saldo</span>
+    <span class="valor text-md">{{ account().balance | currency:"BRL" }}</span>
+  </div>
+</div>
