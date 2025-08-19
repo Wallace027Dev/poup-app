@@ -1,5 +1,13 @@
 <div class="financial-area">
   <app-balance class="balance" [balance]="balance" />
-  <app-transactions class="transactions" [transactions]="transactions()" (createdTransaction)="processTransaction($event)" />
-  <app-accounts class="accounts" [accounts]="accounts" />
+  <app-transactions
+    class="transactions"
+    [transactions]="transactions()"
+    (createdTransaction)="processTransaction($event)"
+  />
+  <app-accounts
+    class="accounts"
+    [accounts]="accounts()"
+    (createdAccount)="addAccount($event)"
+  />
 </div>

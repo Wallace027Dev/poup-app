@@ -39,7 +39,6 @@ export class AddTransactionButtonComponent {
       this.newTransactionForm.account
     );
 
-    console.log(newTransaction);
     this.createdTransaction.emit(newTransaction)
 
     this.openedModal.set(false);

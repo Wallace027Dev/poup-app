@@ -1,7 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, output, signal } from '@angular/core';
 import { ButtonComponent } from '../../../shared/button/button.component';
 import { ModalComponent } from '../../../shared/modal/modal.component';
 import { FormsModule } from '@angular/forms';
+import { Account } from '../../shared/account.model';
 
 @Component({
   selector: 'app-add-accounts-button',
@@ -12,30 +13,24 @@ import { FormsModule } from '@angular/forms';
 export class AddAccountsButtonComponent {
   openedModal = signal(false);
 
+  openModal() {
+    this.openedModal.set(true);
+  }
+
   newAccountForm = {
     name: '',
     initialBalance: '',
   };
 
-  // transactionTypes = TransactionType;
-
-  // createdTransaction = output<Transaction>();
-
-  openModal() {
-    this.openedModal.set(true);
-  }
+  createdAccount = output<Account>();
 
   onSubmit() {
-    //   const newTransaction = new Transaction(
-    //     this.newAccountForm.name,
-    //     Number(this.newAccountForm.initialBalance),
-    //   );
+    const newTransaction = new Account(
+      this.newAccountForm.name,
+      Number(this.newAccountForm.initialBalance)
+    );
 
-    //   console.log(newTransaction);
-    //   this.createdTransaction.emit(newTransaction)
-
-    //   this.openedModal.set(false);
-
-    console.log(this.newAccountForm);
+    this.createdAccount.emit(newTransaction);
+    this.openedModal.set(false);
   }
 }

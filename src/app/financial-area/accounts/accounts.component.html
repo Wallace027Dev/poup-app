@@ -7,17 +7,18 @@
     <div class="accounts-and-button">
       <ul>
         @for (account of accounts(); track account.name) {
-          <li class="item-between-partitions">
-            <app-account [account]="account" />
-          </li>
+        <li class="item-between-partitions">
+          <app-account [account]="account" />
+        </li>
         } @empty {
-          <li aria-hidden="true">
-            Ainda não há accounts criadas.
-          </li>
+        <li aria-hidden="true">Ainda não há accounts criadas.</li>
         }
       </ul>
 
-      <app-add-accounts-button class="add-account-button" />
+      <app-add-accounts-button
+        class="add-account-button"
+        (createdAccount)="createdAccount.emit($event)"
+      />
     </div>
   </div>
 </app-card>

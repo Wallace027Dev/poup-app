@@ -1,18 +1,33 @@
 import { Component, signal } from '@angular/core';
 import { BalanceComponent } from './balance/balance.component';
 import { TransactionsComponent } from './transactions/transactions.component';
-import { ContasComponent } from './accounts/accounts.component';
-import { Conta } from './shared/account.model';
+import { AccountsComponent } from './accounts/accounts.component';
+import { Account } from './shared/account.model';
 import { Transaction, TransactionType } from './shared/transaction.model';
 
 @Component({
   selector: 'app-financial-area',
-  imports: [BalanceComponent, TransactionsComponent, ContasComponent],
+  imports: [BalanceComponent, TransactionsComponent, AccountsComponent],
   templateUrl: './financial-area.component.html',
   styleUrl: './financial-area.component.css',
 })
 export class FinancialAreaComponent {
   balance = -30;
+
+  accounts = signal<Account[]>([
+    {
+      name: 'Anybank',
+      balance: 1000,
+    },
+    {
+      name: 'Bytebank',
+      balance: 0,
+    },
+    {
+      name: 'Switch Bank',
+      balance: 0,
+    },
+  ]);
 
   transactions = signal<Transaction[]>([
     {
@@ -57,25 +72,11 @@ export class FinancialAreaComponent {
     },
   ]);
 
-  accounts: Conta[] = [
-    {
-      name: 'Anybank',
-      balance: 1000,
-    },
-    {
-      name: 'Bytebank',
-      balance: 0,
-    },
-    {
-      name: 'Switch Bank',
-      balance: 0,
-    },
-  ];
-
   processTransaction(transaction: Transaction) {
-    this.transactions.update((transactions) => [
-      transaction,
-      ...transactions,
-    ]);
+    this.transactions.update((transactions) => [transaction, ...transactions]);
+  }
+
+  addAccount(account: Account) {
+    this.accounts.update((accounts) => [...accounts, account]);
   }
 }

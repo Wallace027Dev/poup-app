@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Conta } from '../../shared/account.model';
+import { Account } from '../../shared/account.model';
 import { CurrencyPipe } from '@angular/common';
 
 @Component({
@@ -8,6 +8,6 @@ import { CurrencyPipe } from '@angular/common';
   templateUrl: './account.component.html',
   styleUrl: './account.component.css'
 })
-export class ContaComponent {
-  account = input.required<Conta>();
+export class AccountComponent {
+  account = input.required<Account>();
 }
