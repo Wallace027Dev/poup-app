@@ -1,9 +1,10 @@
-import { Component, output, signal } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 import { ButtonComponent } from '../../../shared/button/button.component';
 import { ModalComponent } from '../../../shared/modal/modal.component';
 import { FormsModule } from '@angular/forms';
 import { KeyValuePipe } from '@angular/common';
 import { Transaction, TransactionType } from '../../shared/transaction.model';
+import { Account } from '../../shared/account.model';
 
 @Component({
   selector: 'app-add-transaction-button',
@@ -24,6 +25,7 @@ export class AddTransactionButtonComponent {
 
   transactionTypes = TransactionType;
 
+  accounts = input.required<Account[]>();
   createdTransaction = output<Transaction>();
 
   openModal() {

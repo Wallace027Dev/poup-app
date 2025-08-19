@@ -3,6 +3,7 @@
   <app-transactions
     class="transactions"
     [transactions]="transactions()"
+    [accounts]="accounts()"
     (createdTransaction)="processTransaction($event)"
   />
   <app-accounts

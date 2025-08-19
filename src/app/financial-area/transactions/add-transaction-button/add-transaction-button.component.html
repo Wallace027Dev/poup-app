@@ -74,8 +74,9 @@
       >
         <option value="" selected disabled>Selecione a conta</option>
 
-        <option value="Anybank">Anybank</option>
-        <option value="Bytebank">Bytebank</option>
+        @for (account of accounts(); track account.name) {
+          <option [value]="account.name">{{ account.name }}</option>
+        }
       </select>
     </label>
 
