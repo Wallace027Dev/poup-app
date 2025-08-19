@@ -55,7 +55,7 @@ Esse projeto é licenciado sob a licenca MIT.
 
 ## Autor
 
-[Wallace Vieira](https://www.portfolio.wallacevieira.dev)
+[Wallace Vieira](https://portfolio.wallacevieira.dev)
 
 ## Contato
 
@@ -63,4 +63,4 @@ Esse projeto é licenciado sob a licenca MIT.
 
 [LinkedIn](https://www.linkedin.com/in/wallace-dev/)
 
-[Instagram](https://www.instagram.com/wallace-dev)
+[Instagram](https://www.instagram.com/wallacevieira.dev)
