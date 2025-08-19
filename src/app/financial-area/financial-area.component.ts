@@ -51,37 +51,10 @@ export class FinancialAreaComponent {
   }
 
   processTransaction(transaction: Transaction) {
-    const account = this.accounts().find(
-      (total) => total.name === transaction.account
-    );
-
-    if (!account) {
-      alert('Conta não encontrada!');
-      return;
-    }
-
-    if (
-      transaction.type === TransactionType.SAQUE &&
-      account.balance < transaction.value
-    ) {
-      alert('Saldo insuficiente para realizar essa transação!');
-      return;
-    }
     this.transactions.update((transactions) => [transaction, ...transactions]);
   }
 
   addAccount(account: Account) {
-    const exists = this.accountsWithInitialBalance().some((total) => {
-      return (
-        total.name.toLocaleLowerCase() === account.name.toLocaleLowerCase()
-      );
-    });
-
-    if (exists) {
-      alert('Já existe uma conta com este nome!');
-      return;
-    }
-
     this.accountsWithInitialBalance.update((accounts) => [
       ...accounts,
       account,

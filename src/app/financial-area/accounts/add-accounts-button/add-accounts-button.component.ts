@@ -1,4 +1,4 @@
-import { Component, output, signal } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 import { ButtonComponent } from '../../../shared/button/button.component';
 import { ModalComponent } from '../../../shared/modal/modal.component';
 import { FormsModule } from '@angular/forms';
@@ -23,14 +23,26 @@ export class AddAccountsButtonComponent {
   };
 
   createdAccount = output<Account>();
+  accountsWithInitialBalance = input.required<Account[]>();
 
   onSubmit() {
-    const newTransaction = new Account(
+    const newAccount = new Account(
       this.newAccountForm.name,
       Number(this.newAccountForm.initialBalance)
     );
 
-    this.createdAccount.emit(newTransaction);
+    const exists = this.accountsWithInitialBalance().some((total) => {
+      return (
+        total.name.toLocaleLowerCase() === newAccount.name.toLocaleLowerCase()
+      );
+    });
+
+    if (exists) {
+      alert('Já existe uma conta com este nome!');
+      return;
+    }
+
+    this.createdAccount.emit(newAccount);
     this.openedModal.set(false);
 
     this.newAccountForm = {

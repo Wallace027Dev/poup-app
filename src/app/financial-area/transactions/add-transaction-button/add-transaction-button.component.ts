@@ -41,7 +41,24 @@ export class AddTransactionButtonComponent {
       this.newTransactionForm.account
     );
 
-    this.createdTransaction.emit(newTransaction)
+    const account = this.accounts().find(
+      (total) => total.name === newTransaction.account
+    );
+
+    if (!account) {
+      alert('Conta não encontrada!');
+      return;
+    }
+
+    if (
+      newTransaction.type === TransactionType.SAQUE &&
+      account.balance < newTransaction.value
+    ) {
+      alert('Saldo insuficiente para realizar essa transação!');
+      return;
+    }
+
+    this.createdTransaction.emit(newTransaction);
     this.openedModal.set(false);
 
     this.newTransactionForm = {
