@@ -1,61 +1,61 @@
-import { Component } from '@angular/core';
-import { BalanceComponent } from "./balance/balance.component";
-import { TransactionsComponent } from "./transactions/transactions.component";
-import { ContasComponent } from "./accounts/accounts.component";
+import { Component, signal } from '@angular/core';
+import { BalanceComponent } from './balance/balance.component';
+import { TransactionsComponent } from './transactions/transactions.component';
+import { ContasComponent } from './accounts/accounts.component';
 import { Conta } from './shared/account.model';
-import { Transacao, TipoTransacao } from './shared/transaction.model';
+import { Transaction, TransactionType } from './shared/transaction.model';
 
 @Component({
   selector: 'app-financial-area',
   imports: [BalanceComponent, TransactionsComponent, ContasComponent],
   templateUrl: './financial-area.component.html',
-  styleUrl: './financial-area.component.css'
+  styleUrl: './financial-area.component.css',
 })
 export class FinancialAreaComponent {
   balance = -30;
 
-  transactions: Transacao[] = [
+  transactions = signal<Transaction[]>([
     {
       id: '5',
       name: '',
-      tipo: TipoTransacao.SAQUE,
+      tipo: TransactionType.SAQUE,
       value: 200,
       date: new Date('2025-02-20T00:00'),
-      account: 'Switch Bank'
+      account: 'Switch Bank',
     },
     {
       id: '4',
       name: 'Almoço',
-      tipo: TipoTransacao.SAQUE,
+      tipo: TransactionType.SAQUE,
       value: 40,
       date: new Date('2025-01-15T00:00'),
-      account: 'Bytebank'
+      account: 'Bytebank',
     },
     {
       id: '3',
       name: '',
-      tipo: TipoTransacao.DEPOSITO,
+      tipo: TransactionType.DEPOSITO,
       value: 400,
       date: new Date('2025-01-10T00:00'),
-      account: 'Bytebank'
+      account: 'Bytebank',
     },
     {
       id: '2',
       name: 'Freela (2ª parte)',
-      tipo: TipoTransacao.DEPOSITO,
+      tipo: TransactionType.DEPOSITO,
       value: 200,
       date: new Date('2024-10-01T00:00'),
-      account: 'Anybank'
+      account: 'Anybank',
     },
     {
       id: '1',
       name: 'Freela (1ª parte)',
-      tipo: TipoTransacao.DEPOSITO,
+      tipo: TransactionType.DEPOSITO,
       value: 100,
       date: new Date('2024-10-01T00:00'),
-      account: 'Anybank'
+      account: 'Anybank',
     },
-  ];
+  ]);
 
   accounts: Conta[] = [
     {
@@ -71,4 +71,11 @@ export class FinancialAreaComponent {
       balance: 0,
     },
   ];
+
+  processTransaction(transaction: Transaction) {
+    this.transactions.update((transactions) => [
+      transaction,
+      ...transactions,
+    ]);
+  }
 }

@@ -13,6 +13,8 @@
     </ul>
 
     <app-add-transaction-button
-      class="add-transaction-button" />
+      class="add-transaction-button"
+      (createdTransaction)="createdTransaction.emit($event)"
+      />
   </div>
 </app-card>

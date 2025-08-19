@@ -1,0 +1,39 @@
+<app-button (click)="openModal()">
+  <img src="icones/carteira.svg" alt="" class="wallet-icon" />
+  Adicionar conta
+</app-button>
+
+<app-modal [(open)]="openedModal">
+  <ng-container modal-header class="modal-header">
+    <img src="icones/carteira.svg" alt="" />
+    <h2 class="text-xl">Adicionar conta</h2>
+  </ng-container>
+
+  <form class="form text-md" (ngSubmit)="onSubmit()" ngNativeValidate>
+    <label class="label-group">
+      Banco
+      <input
+        type="text"
+        name="name-account"
+        class="input"
+        [(ngModel)]="newAccountForm.name"
+      />
+    </label>
+
+    <label class="label-group">
+      Saldo
+      <input
+        class="input"
+        type="number"
+        name="value-balance"
+        [(ngModel)]="newAccountForm.initialBalance"
+        min="0"
+        step="0.01"
+        placeholder="R$ 500,00"
+        required
+      />
+    </label>
+
+    <app-button class="add-account-button">Adicionar</app-button>
+  </form>
+</app-modal>

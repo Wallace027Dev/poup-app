@@ -9,24 +9,32 @@
     <h2 class="text-xl">Adicionar transação</h2>
   </ng-container>
 
-  <form class="form text-md">
+  <form class="form text-md" (ngSubmit)="onSubmit()" ngNativeValidate>
     <label class="label-group">
       Nome da transação
-      <input class="input" type="text" name="name-transaction" />
+      <input
+        type="text"
+        name="name-transaction"
+        class="input"
+        [(ngModel)]="newTransactionForm.name"
+      />
     </label>
 
     <fieldset class="group-type-transaction" required>
       <legend class="legend">Tipo da transação</legend>
 
-      <label class="label-group-radio">
-        <input type="radio" name="type-transaction" required />
-        Saque
+      @for (type of transactionTypes | keyvalue; track type.key) {
+      <label class="label-type-transaction">
+        <input
+          type="radio"
+          name="type-transaction"
+          [(ngModel)]="newTransactionForm.type"
+          [value]="type.key"
+          required
+        />
+        {{ type.value }}
       </label>
-
-      <label class="label-group-radio">
-        <input type="radio" name="type-transaction" required />
-        Depósito
-      </label>
+      }
     </fieldset>
 
     <label class="label-group">
@@ -34,7 +42,8 @@
       <input
         class="input"
         type="number"
-        name="valor-transaction"
+        name="value-transaction"
+        [(ngModel)]="newTransactionForm.value"
         min="0.01"
         step="0.01"
         placeholder="R$ 500,00"
@@ -44,15 +53,23 @@
 
     <label class="label-group">
       Data da transação
-      <input class="input" type="date" name="data-transaction" required />
+      <input
+        class="input"
+        type="date"
+        name="data-transaction"
+        [(ngModel)]="newTransactionForm.date"
+        required
+      />
     </label>
 
     <label class="label-group">
       Conta Bancária
 
       <select
+        id="account"
         name="account-transaction"
-        class="input select-conta-transaction"
+        [(ngModel)]="newTransactionForm.account"
+        class="input select-account-transaction"
         required
       >
         <option value="" selected disabled>Selecione a conta</option>

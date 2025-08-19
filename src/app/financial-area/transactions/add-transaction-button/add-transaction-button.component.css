@@ -19,7 +19,8 @@
 
   border-radius: 0.5rem;
   border: 0;
-  background: var(--fundo-componentes);
+  background: var(--background-components);
+  color: var(--text);
 }
 
 .group-type-transaction {
