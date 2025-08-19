@@ -10,6 +10,21 @@
 - Visualização de saldo e histórico financeiro
 - Interface amigável e responsiva
 
+## Pré-visualização
+
+- Home
+![Poupapp](/public/preview/preview-1.png)
+
+- Criando contas
+![Poupapp](/public/preview/preview-2.png)
+
+- Criando transações
+![Poupapp](/public/preview/preview-3.png)
+
+- Visualizando transações e contas
+![Poupapp](/public/preview/preview-4.png)
+
+
 ## Instalação
 
 Clone o repositório e instale as dependências:
