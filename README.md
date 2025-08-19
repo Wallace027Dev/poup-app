@@ -1,59 +1,51 @@
 # Poupapp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
+## Descrição
 
-## Development server
+**Poupapp** é um projeto desenvolvido durante um curso de **Angular 19**, com foco em organização financeira pessoal. O aplicativo permite que os usuários gerenciem suas finanças de maneira prática e intuitiva.
 
-To start a local development server, run:
+## Funcionalidades
+
+- Gerenciamento de receitas e despesas
+- Visualização de saldo e histórico financeiro
+- Interface amigável e responsiva
+
+## Instalação
+
+Clone o repositório e instale as dependências:
+
+```bash
+npm install
+```
+
+## Execução
+
+Inicie a aplicação em ambiente de desenvolvimento:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Acesse *http://localhost:4200* no seu navegador.
 
-## Code scaffolding
+## Tecnologias
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Angular 19
+- Typescript 5.x.x
+- Node 16.x.x
 
-```bash
-ng generate component component-name
-```
+## Licença
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Esse projeto é licenciado sob a licenca MIT.
 
-```bash
-ng generate --help
-```
+## Autor
 
-## Building
+[Wallace Vieira](https://www.portfolio.wallacevieira.dev)
 
-To build the project run:
+## Contato
 
-```bash
-ng build
-```
+[GitHub](https://www.github.com/Wallace027Dev)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+[LinkedIn](https://www.linkedin.com/in/wallace-dev/)
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+[Instagram](https://www.instagram.com/wallace-dev)

@@ -1,6 +1,9 @@
 {
   "name": "poupapp",
-  "version": "0.0.0",
+  "description": "Projeto desenvolvido durante um curso de Angular 19, com foco em organização financeira pessoal.",
+  "license": "MIT",
+  "author": "Wallace Vieira",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
