@@ -6,7 +6,7 @@ export class Transaction {
 
   constructor(
     public readonly name: string,
-    public readonly tipo: TransactionType,
+    public readonly type: TransactionType,
     public readonly value: number,
     date: string,
     public readonly account: string

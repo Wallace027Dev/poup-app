@@ -13,7 +13,7 @@ export class TransactionComponent {
   transaction = input.required<Transaction>();
 
   value = computed(() => {
-    if (this.transaction().tipo === TransactionType.SAQUE) {
+    if (this.transaction().type === TransactionType.SAQUE) {
       return -this.transaction().value;
     }
 
