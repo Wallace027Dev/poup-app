@@ -3,7 +3,7 @@
   align-items: center;
 }
 
-.banco {
+.bank {
   width: 70%;
 
   display: flex;
@@ -11,7 +11,7 @@
   gap: 0.5rem;
 }
 
-.banco-name {
+.bank-name {
   font-weight: 700;
 }
 

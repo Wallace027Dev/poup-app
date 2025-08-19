@@ -1,9 +1,9 @@
-.apresentacao {
+.presentation {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.titulo {
+.title {
   font-weight: 700;
 }
