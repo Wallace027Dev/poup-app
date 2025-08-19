@@ -12,8 +12,6 @@ import { Transaction, TransactionType } from './shared/transaction.model';
   styleUrl: './financial-area.component.css',
 })
 export class FinancialAreaComponent {
-  balance = 0;
-
   transactions = signal<Transaction[]>([]);
   accountsWithInitialBalance = signal<Account[]>([]);
 
@@ -23,6 +21,12 @@ export class FinancialAreaComponent {
 
       return { ...account, balance: updatedBalance };
     });
+  });
+
+  balance = computed(() => {
+    return this.accounts().reduce((total, account) => {
+      return total + account.balance;
+    }, 0);
   });
 
   calculateBalanceUpdated(initialAccount: Account) {

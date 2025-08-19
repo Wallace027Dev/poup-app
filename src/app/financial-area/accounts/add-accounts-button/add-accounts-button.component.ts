@@ -32,5 +32,10 @@ export class AddAccountsButtonComponent {
 
     this.createdAccount.emit(newTransaction);
     this.openedModal.set(false);
+
+    this.newAccountForm = {
+      name: '',
+      initialBalance: '',
+    };
   }
 }

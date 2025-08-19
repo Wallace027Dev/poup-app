@@ -42,7 +42,14 @@ export class AddTransactionButtonComponent {
     );
 
     this.createdTransaction.emit(newTransaction)
-
     this.openedModal.set(false);
+
+    this.newTransactionForm = {
+      name: '',
+      type: '',
+      value: '',
+      date: '',
+      account: '',
+    };
   }
 }
