@@ -47,7 +47,7 @@ Acesse *http://localhost:4200* no seu navegador.
 
 - Angular 19
 - Typescript 5.x.x
-- Node 16.x.x
+- Node 22.x.x
 
 ## Licença
 
